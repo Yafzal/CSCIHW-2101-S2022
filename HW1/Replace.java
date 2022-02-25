@@ -9,7 +9,11 @@ package HW1;
 // 01234
 public class Replace {
     public String charReplace(String s, int x, char z) {
-        return null;
+      
+        String B = s;
+        System.out.println(B);
+        String answer = s.substring(0,x) + z + s.substring(x+1);
+        return answer;
         
     }
     
