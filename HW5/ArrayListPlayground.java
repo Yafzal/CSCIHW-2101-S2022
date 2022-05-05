@@ -128,7 +128,7 @@ public class ArrayListPlayground {
 
       System.out.println("Enter " + SIZE + " numbers.");
 
-      // Get employees' salary.
+
       for (int i = 0; i < SIZE; i++)
       {
          numbers[i] = console.nextInt();
@@ -136,7 +136,7 @@ public class ArrayListPlayground {
 
       int sum = 0;
 
-      // Calculate the sum.
+
       for (int i = 0; i < SIZE; i++)
       {
          sum += numbers[i];
