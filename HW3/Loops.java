@@ -17,7 +17,20 @@ public class Loops {
     //eeeeat -> false
 
     public static boolean loopE(String str){
-        return true; // <- this should be changed 
+        int count=0;
+        for(int i=0 ; i<str.length() ; i++) 
+        {
+        if (str.charAt(i) == 'e') 
+        
+        {++count;}
+        if (count >= 1 && count <= 3)
+        {
+            return true;
+        }
+        else 
+        return false;
+        }
+        return false;
     }
 
     //Given a String str and int n return a larger string
@@ -26,8 +39,22 @@ public class Loops {
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
     public static String stringTimes(String str, int n) {
-        return null; // <- this should be changed 
-    } 
+        String newStr = "";
+
+for(int i=1 ; i<=n ; i++) 
+{
+
+newStr = newStr + str; 
+}
+
+return newStr; 
+}
+
+
+
+
+
+    
 
     //Create a method Given a string, return the string where all of the "z"
     //Have been removed. Except do not remove a z at the start
@@ -37,8 +64,14 @@ public class Loops {
     //stringT("nozthaznks") -> "nothanks"
     //stringT("xksiazdjaasldzsajzasdz") -> "xksiadjaasldsajasdz"
     public static String stringZ(String str){
-        return null; // <- this should be changed 
-    }
+        String newStr = str.substring(0,1);  
+        String newS = str.substring(1, str.length()-1);
+        newStr = newStr + newS.replace("z",""); 
+        //char ch = str.charAt(str.length()+1)
+        newStr = newStr + str.substring(str.length()-1, str.length()); 
+        return newStr; 
+        }
+    
 
     //Create a method that contains a while loop that allows for
     //The user to input numbers until the number 0 is entered. Each time a number is 
@@ -66,10 +99,42 @@ public class Loops {
     // Number: 0
     // TOTAL ENDED --- The total is 27.
     public static void sums(){
+        Scanner sc = new Scanner(System.in);
+int input=0, total=0;
+do 
+{
+System.out.print("Number: ");
+input = sc.nextInt(); 
+
+
+total = total + input; 
+System.out.println("The total so far is "+total+".");
+}
+while (input != 0); 
+
+System.out.println("TOTAL ENDED --- The total is "+total+".");
+
+sc.close(); 
+
+
+
     }
 
     public static void main(String[] args) {
-        // Add code to help test your methods here
+        System.out.println("Testing for method loopE");
+        System.out.println(loopE("eat"));
+        System.out.println(loopE("eeat"));
+        System.out.println(loopE("eeeat"));
+        System.out.println(loopE("eeeeat"));
+        System.out.println("\n\nTesting for method stringTimes");
+        System.out.println(stringTimes("Code",2));
+        System.out.println(stringTimes("Code",4));
+        System.out.println("\n\nTesting for method stringZ");
+        System.out.println(stringZ("zHelloz") );
+        System.out.println(stringZ("nozthaznks"));
+        System.out.println(stringZ("xksiazdjaasldzsajzasdz") );
+        System.out.println("\n\nTesting for method sums");
+        sums();
 
     }
     
